@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmp\nD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+</head>
+<body>
+
+  <div class="nav-bar">
+    <div class="logo1">
+      <div class="logo"></div>
+    </div>
+    <h3 class="heading">PROPERTY TRANSACTION TRACKING</h3>
+    <div class="logo2">
+      <i class="fa-solid fa-landmark-flag">I N D I A</i>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-all">
+      <i class="fa-solid fa-lines-leaning"> </i>
+    </div>
+    <div class="panel-items ">
+      <p class="border">Home</p>
+      <p class="border">About Us</p>
+      <p class="border"> Services</p>
+      <p class="border"> User Guide</p>
+      <p class="border"> Navigation</p>
+    </div>
+  </div>
+
+  <div class="text">
+    <h1>Unlock the power of real-time  </h1>
+    <h1>property data to make confident!</h1>
+    <h4 class="sub-text">Data at your fingertips</h4>
+  </div>
+      <div class="the-main">
+        <div class="transaction_panel">
+            <div class="container">
+            
+                <div class="nav-search">
+                    <select class="search_select">
+                    <option value="All"></option>
+                    </select>
+                    <input class="search_input" placeholder="Select City">
+                    <div class="search_icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+                <div class="nav-search2">
+                    <select class="search_select">
+                        <option value="All"></option>
+                    </select>
+                    <input class="search_input" placeholder="Select Project or Locality">
+                    <div class="search_icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+            </div>
+                <div class="pay-now-button">
+                    <input type="submit" value="View Transaction">
+                </div>
+        </div>
+        <div id="sankey_multiple" style="width: 900px; height: 300px;"></div>
+
+      <script type="text/javascript", class="graph">
+        google.charts.load("current", {packages:["sankey"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'From');
+          data.addColumn('string', 'To');
+          data.addColumn('number', 'Weight');
+          data.addRows([
+            [ 'Bengaluru', 'Hebbala', 5 ],
+            [ 'Bengaluru', 'Koramangala', 1 ],
+            [ 'Bengaluru', 'Yelahanka', 1 ],
+            [ 'Bengaluru', 'Maleshwaram', 1 ],
+            [ 'Chennai', 'Hebbala', 1 ],
+            [ 'Chennai', 'Koramangala', 5 ],
+            [ 'Chennai', 'Maleshwaram', 1 ],
+            [ 'Tamilnadu', 'Hebbala', 1 ],
+            [ 'Tamilnadu', 'Koramangala', 1 ],
+            [ 'Tamilnadu', 'Yelahanka', 5 ],
+            [ 'Tamilnadu', 'Maleshwaram', 1 ],
+            [ 'Gujarath', 'Hebbala', 1 ],
+            [ 'Gujarath', 'Koramangala', 1 ],
+            [ 'Gujarath', 'Yelahanka', 1 ],
+            [ 'Gujarath', 'Maleshwaram', 5 ],
+            [ 'Hebbala', 'Maharashtra', 2 ],
+            [ 'Hebbala', 'Mumbai', 1 ],
+            [ 'Hebbala', 'Pune', 1 ],
+            [ 'Hebbala', 'Kerala', 3 ],
+            [ 'Koramangala', 'Maharashtra', 1 ],
+            [ 'Koramangala', 'Mumbai', 3 ],
+            [ 'Koramangala', 'Vishakapatanam', 3 ],
+            [ 'Koramangala', 'Pune', 3 ],
+            [ 'Koramangala', 'Kerala', 1 ],
+            [ 'Yelahanka', 'Mumbai', 1 ],
+            [ 'Yelahanka', 'Pune', 3 ],
+            [ 'Yelahanka', 'Kerala', 1 ],
+            [ 'Maleshwaram', 'Maharashtra', 1 ],
+            [ 'Maleshwaram', 'Mumbai', 1 ],
+            [ 'Maleshwaram', 'Pune', 2 ],
+            [ 'Maleshwaram', 'Kerala', 7 ],
+            [ 'Kerala', 'Ranchi', 5 ],
+            [ 'Kerala', 'Delhi', 1 ],
+            [ 'Kerala', 'Kolkata', 3 ],
+            [ 'Maharashtra', 'Ranchi', 5 ],
+            [ 'Maharashtra', 'Delhi', 1 ],
+            [ 'Maharashtra', 'Kolkata', 3 ],
+            [ 'Mumbai', 'Ranchi', 5 ],
+            [ 'Mumbai', 'Delhi', 1 ],
+            [ 'Mumbai', 'Kolkata', 3 ],
+            [ 'Vishakapatanam', 'Ranchi', 5 ],
+            [ 'Vishakapatanam', 'Delhi', 1 ],
+            [ 'Vishakapatanam', 'Kolkata', 3 ],
+            [ 'Pune', 'Ranchi', 5 ],
+            [ 'Pune', 'Delhi', 1 ],
+            [ 'Pune', 'Kolkata', 3 ]
+          ]);
+
+          // Set chart options
+          var options = {
+            width: 600,
+          };
+
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+          chart.draw(data, options);
+        }
+      </script>
+      </div>
+    
+  </div>
+  <div class="maps">
+    <h2>Find your Dream Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7471705.357825467!2d73.123243277097!3d23.87920433343285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39667381d35aea05%3A0xe0106b0d4e701c1e!2sMadhya%20Pradesh!5e0!3m2!1sen!2sin!4v1698849686054!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <div class="table">
+    <iframe src="https://www.jotform.com/table/233051342740041" frameborder="0" style="width: 100%; height: 100%; min-height: 500px; border:none;" scrolling="auto"></iframe>
+  </div>
+  
+</body>
+</html>
